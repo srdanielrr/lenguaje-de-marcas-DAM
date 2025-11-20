@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>receta</title>
+<meta charset="utf-8">
+
+
+<style>
+
+/* tipo de caja  */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Tipo de letra y eliminación del margen por defecto */
+
+body {
+  font-family: Arial, Helvetica, sans-serif; /* tipo de letra en el body */
+  margin: 0;
+}
+
+/* cabecera con imagen de fondo y menú */
+
+/* Zona superior con imagen de fondo, borde inferior y texto blanco */
+
+header {
+  background-image: url("https://thumbs.dreamstime.com/z/ejemplo-incons%C3%BAtil-en-el-tema-de-cocinar-y-utensilios-de-la-cocina-iconos-simples-del-contorno-contorno-blanco-en-fondo-oscuro-98014175.jpg"); /* imagen de fondo */
+  background-size: cover;   
+  background-position: center; 
+  border-bottom: 2px solid #000;    
+  padding: 20px 0 40px;
+  color: white;
+  
+}
+
+/* Menú */
+
+/* Barra de navegación del menú principal */
+
+nav.menu {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 20px;
+}
+
+/* Lista del menú en horizontal y centrada */
+
+nav.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Inicio, Recetario, Contacto */
+
+nav.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Cada elemento del menú para poder posicionar el submenú */
+
+nav.menu li {
+  position: relative;
+}
+
+/* Lista del submenú que se despliega bajo "Recetario" */
+
+nav.menu .submenu-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0,0,0,0.9);
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  display: none;
+  min-width: 150px;
+}
+
+/* Mostrar el submenú cuando pasamos el ratón por encima */
+
+nav.menu li.submenu:hover .submenu-items {
+  display: block;
+}
+
+/* Separación interna de cada opción del submenú */
+
+nav.menu .submenu-items li {
+  padding: 4px 15px;
+}
+
+/* Los enlaces del submenú ocupan todo el ancho del elemento */
+
+nav.menu .submenu-items a {
+  display: block;
+}
+
+/* TÍTULO PRINCIPAL DE LA PÁGINA */
+
+
+.titulo-principal {
+  text-align: center; /*centrado*/
+  margin-top: 20px;
+}
+
+/* Caja oscura detrás del texto del título para que se lea mejor */
+
+.titulo-principal span {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(0,0,0,0.6); /* fondo oscuro */
+  border-radius: 10px;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase,bold;
+  text-shadow: 0 0 5px #000, 0 0 10px #000; 
+}
+
+/* CONTENIDO */
+
+article {
+  background-image: url("https://media.istockphoto.com/id/1460742503/es/vector/juego-de-utensilios-de-cocina-garabatos-sobre-fondo-blanco-equipos-de-cocina-doodle.jpg?s=612x612&w=0&k=20&c=SRsmSqns0b5RlB2NvgAU7XePHXNccaVcygsxa4jwMqw=");
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* CAJAIMAGEN + cajaINGREDIENTES  */
+
+.cajaimagen,
+.cajaingredientes {
+  background-color: #dddd;
+  padding: 10px;
+  border-radius: 10px;
+  width: 300px;
+  
+  
+  margin-bottom: 15px;
+}
+
+/* Imagen de la receta ocupando toda la cajaimagen*/
+.cajaimagen img {
+  width: 100%;
+  height:225px ;
+  
+  border-radius: 200px;
+}
+
+/* Texto de ingredientes alineado a la izquierda dentro de su caja */
+
+.cajaingredientes {
+  text-align: left;
+  
+}
+
+/* Título ingredientes con separación */
+
+.titulo-ingredientes {
+  font-weight: bold;
+  font-size: 24px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #b04b7a; /*raya separadora*/
+  margin-bottom: 10px;
+}
+
+/* Lista ingredientes */
+.lista-ingredientes {
+      
+  padding: 0;
+  margin: 0;
+}
+/* Cada fila de ingrediente */
+
+.lista-ingredientes li {
+  display: flex;                       
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #b04b7a;     /* raya separadora color y grosor */
+  padding: 4px 0;
+  margin-bottom: 4px;
+}
+
+.lista-ingredientes .cantidad {
+  font-weight: bold; /* negrita texto ingredientes*/
+}
+
+/* footer */
+footer {
+  background-color: #777;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 14px;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<header id="inicio">
+  <!-- MENÚ DESPLEGABLE -->
+  <nav class="menu">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li class="submenu">
+        <a href="#recetario">Recetario ▾</a>
+        <ul class="submenu-items">
+          <li><a href="#patatas">Patatas bacon</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- TÍTULO -->
+  <h1 class="titulo-principal">
+    <span>PATATAS BACON CON CHEDDAR</span>
+  </h1>
+</header>
+
+<article id="recetario">
+  <!-- Caja de imagen -->
+  <div class="cajaimagen" id="patatas">
+    <img src="https://images.ecestaticos.com/PBqvi4M7-eoZ8wvNvQjc-bqprag=/6x3:1182x885/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fb90%2F67b%2F244%2Fb9067b244cfaef1491beecd8b3ed5eab.jpg" alt="Patatas">
+  </div>
+  
+  <!-- Caja de ingredientes -->
+  <div class="cajaingredientes">
+    <h2 class="titulo-ingredientes">Ingredientes</h2>
+    <p>(Para 4 personas)</p>
+
+    <ul class="lista-ingredientes">
+      <li>
+        <span>Patatas frescas de huerta(recién sacadas)</span>
+        <span class="cantidad">6</span>
+      </li>
+      <li>
+        <span>Cebolla picada</span>
+        <span class="cantidad">250 g</span>
+      </li>
+      <li>
+        <span>Bacon en tiras</span>
+        <span class="cantidad">300 g</span>
+      </li>
+      <li>
+        <span>Queso cheddar rallado</span>
+        <span class="cantidad">200 g</span>
+      </li>
+      <li>
+        <span>Sal</span>
+        <span class="cantidad">8g</span>
+      </li>
+       <li>
+        <span>Cucharadas de aceite de oliva</span>
+        <span class="cantidad">2</span>
+      </li>
+     
+     
+    </ul>
+  </div>
+</article>
+
+<footer id="contacto">
+  ©2025 Receta de Daniel Ruiz-Ruano Funes
+</footer>
+
+</body>
+</html>
+
